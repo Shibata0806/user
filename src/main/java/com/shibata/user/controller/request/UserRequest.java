@@ -1,19 +1,17 @@
-package com.shibata.user;
+package com.shibata.user.controller.request;
 
-public class User {
-    private int id;
+import jakarta.validation.constraints.NotNull;
+
+public class UserRequest {
+    @NotNull
     private String name;
 
+    @NotNull
     private String email;
 
-    public User(int id, String name, String email) {
-        this.id = id;
+    public UserRequest(String name, String email) {
         this.name = name;
         this.email = email;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {
