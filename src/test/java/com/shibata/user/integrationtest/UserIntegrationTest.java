@@ -34,7 +34,7 @@ public class UserIntegrationTest {
         JSONAssert.assertEquals("[" +
                 " {" +
                 " \"id\": 1," +
-                " \"name\": \"清⽔1\"," +
+                " \"name\": \"清⽔\"," +
                 " \"email\": \"shimizu@example.com\"" +
                 " }," +
                 " {" +
