@@ -2,10 +2,10 @@ package com.shibata.user.service;
 
 import com.shibata.user.entity.User;
 import com.shibata.user.exception.UserAlreadyExistsException;
-import com.shibata.user.exception.UserNotFoundException;
 import com.shibata.user.mapper.UserMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -16,13 +16,13 @@ public class UserService {
         this.userMapper = userMapper;
     }
 
-    public User findUser(int id) {
+    public List<User> findAll() {
+        return this.userMapper.findAll();
+    }
+
+    public User findUser(int id) throws Exception {
         Optional<User> user = this.userMapper.findById(id);
-        if (user.isPresent()) {
-            return user.get();
-        } else {
-            throw new UserNotFoundException("user_id : " + id + " not found");
-        }
+        return user.orElseThrow(() -> new Exception("ユーザーが⾒つかりませんでした。"));
     }
 
     public User insert(String name, String email) {
@@ -34,4 +34,5 @@ public class UserService {
         userMapper.insert(user);
         return user;
     }
+
 }
