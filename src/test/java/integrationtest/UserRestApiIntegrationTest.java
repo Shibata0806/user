@@ -36,7 +36,7 @@ public class UserRestApiIntegrationTest {
         JSONAssert.assertEquals("[" +
                 " {" +
                 " \"id\": 1," +
-                " \"name\": \"清⽔111\"," +
+                " \"name\": \"清⽔\"," +
                 " \"email\": \"shimizu@example.com\"" +
                 " }," +
                 " {" +
