@@ -6,6 +6,7 @@ import com.shibata.user.exception.UserNotFoundException;
 import com.shibata.user.mapper.UserMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -14,6 +15,10 @@ public class UserService {
 
     public UserService(UserMapper userMapper) {
         this.userMapper = userMapper;
+    }
+
+    public List<User> findAll() {
+        return this.userMapper.findAll();
     }
 
     public User findUser(int id) {
