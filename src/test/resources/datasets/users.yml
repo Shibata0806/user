@@ -1,0 +1,10 @@
+users:
+  - id: 1
+    name: "清⽔"
+    email: "shimizu@example.com"
+  - id: 2
+    name: "⼩⼭"
+    email: "koyama@example.com"
+  - id: 3
+    name: "⽥中"
+    email: "tanaka@example.com"

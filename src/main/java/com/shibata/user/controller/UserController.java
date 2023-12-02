@@ -22,6 +22,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
 import java.time.ZonedDateTime;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -31,6 +32,11 @@ public class UserController {
 
     public UserController(UserService userService) {
         this.userService = userService;
+    }
+
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return userService.findAll();
     }
 
     @GetMapping("/users/{id}")
